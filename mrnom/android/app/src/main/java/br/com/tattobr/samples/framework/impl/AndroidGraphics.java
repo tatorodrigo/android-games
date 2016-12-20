@@ -101,6 +101,13 @@ public class AndroidGraphics implements Graphics {
     }
 
     @Override
+    public void drawText(CharSequence text, int x, int y, int textSize, int color) {
+        paint.setColor(color);
+        paint.setTextSize(textSize);
+        canvas.drawText(text, 0, text.length(), x, y, paint);
+    }
+
+    @Override
     public void drawPixmap(Pixmap pixmap, int x, int y, int srcX, int srcY, int srcWidth, int srcHeight) {
         srcRect.set(srcX, srcY, srcX + srcWidth - 1, srcY + srcHeight - 1);
         dstRect.set(x, y, x + srcWidth - 1, y + srcHeight - 1);
