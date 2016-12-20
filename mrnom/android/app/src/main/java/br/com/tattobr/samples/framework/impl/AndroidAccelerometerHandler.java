@@ -1,4 +1,4 @@
-package br.com.tattobr.samples.mrnom.framework.impl;
+package br.com.tattobr.samples.framework.impl;
 
 import android.content.Context;
 import android.hardware.Sensor;

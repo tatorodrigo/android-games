@@ -1,4 +1,4 @@
-package br.com.tattobr.samples.mrnom.framework.impl;
+package br.com.tattobr.samples.framework.impl;
 
 import android.app.Activity;
 import android.content.res.AssetFileDescriptor;
@@ -10,9 +10,9 @@ import android.os.Build;
 
 import java.io.IOException;
 
-import br.com.tattobr.samples.mrnom.framework.Audio;
-import br.com.tattobr.samples.mrnom.framework.Music;
-import br.com.tattobr.samples.mrnom.framework.Sound;
+import br.com.tattobr.samples.framework.Audio;
+import br.com.tattobr.samples.framework.Music;
+import br.com.tattobr.samples.framework.Sound;
 
 public class AndroidAudio implements Audio {
     private AssetManager assets;

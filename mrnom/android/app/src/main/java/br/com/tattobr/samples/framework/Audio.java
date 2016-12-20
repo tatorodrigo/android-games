@@ -1,4 +1,4 @@
-package br.com.tattobr.samples.mrnom.framework;
+package br.com.tattobr.samples.framework;
 
 public interface Audio {
     Music newMusic(String fileName);

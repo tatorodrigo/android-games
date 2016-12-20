@@ -1,9 +1,9 @@
-package br.com.tattobr.samples.mrnom.framework.impl;
+package br.com.tattobr.samples.framework.impl;
 
 import android.graphics.Bitmap;
 
-import br.com.tattobr.samples.mrnom.framework.Graphics;
-import br.com.tattobr.samples.mrnom.framework.Pixmap;
+import br.com.tattobr.samples.framework.Graphics;
+import br.com.tattobr.samples.framework.Pixmap;
 
 public class AndroidPixmap implements Pixmap {
     Bitmap bitmap;

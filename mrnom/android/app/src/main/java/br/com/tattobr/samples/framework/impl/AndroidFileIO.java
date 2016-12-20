@@ -1,4 +1,4 @@
-package br.com.tattobr.samples.mrnom.framework.impl;
+package br.com.tattobr.samples.framework.impl;
 
 import android.content.res.AssetManager;
 import android.os.Environment;
@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import br.com.tattobr.samples.mrnom.framework.FileIO;
+import br.com.tattobr.samples.framework.FileIO;
 
 public class AndroidFileIO implements FileIO {
     private AssetManager assets;

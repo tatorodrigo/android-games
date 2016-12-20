@@ -1,4 +1,4 @@
-package br.com.tattobr.samples.mrnom.framework.impl;
+package br.com.tattobr.samples.framework.impl;
 
 import android.view.KeyEvent;
 import android.view.View;
@@ -6,8 +6,8 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.tattobr.samples.mrnom.framework.Input;
-import br.com.tattobr.samples.mrnom.framework.Pool;
+import br.com.tattobr.samples.framework.Input;
+import br.com.tattobr.samples.framework.Pool;
 
 public class AndroidKeyboardHandler implements View.OnKeyListener {
     private boolean[] pressedKeys = new boolean[128];

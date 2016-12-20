@@ -1,21 +1,20 @@
-package br.com.tattobr.samples.mrnom.framework.impl;
+package br.com.tattobr.samples.framework.impl;
 
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-import br.com.tattobr.samples.mrnom.framework.Audio;
-import br.com.tattobr.samples.mrnom.framework.FileIO;
-import br.com.tattobr.samples.mrnom.framework.Game;
-import br.com.tattobr.samples.mrnom.framework.Graphics;
-import br.com.tattobr.samples.mrnom.framework.Input;
-import br.com.tattobr.samples.mrnom.framework.Screen;
+import br.com.tattobr.samples.framework.Audio;
+import br.com.tattobr.samples.framework.FileIO;
+import br.com.tattobr.samples.framework.Game;
+import br.com.tattobr.samples.framework.Graphics;
+import br.com.tattobr.samples.framework.Input;
+import br.com.tattobr.samples.framework.Screen;
 
 public abstract class AndroidGame extends Activity implements Game {
     private AndroidFastRenderView renderView;

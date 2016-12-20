@@ -1,11 +1,11 @@
-package br.com.tattobr.samples.mrnom.framework.impl;
+package br.com.tattobr.samples.framework.impl;
 
 import android.content.res.AssetFileDescriptor;
 import android.media.MediaPlayer;
 
 import java.io.IOException;
 
-import br.com.tattobr.samples.mrnom.framework.Music;
+import br.com.tattobr.samples.framework.Music;
 
 public class AndroidMusic implements Music, MediaPlayer.OnCompletionListener {
     private MediaPlayer mediaPlayer;

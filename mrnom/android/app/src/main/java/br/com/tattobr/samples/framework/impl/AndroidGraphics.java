@@ -1,4 +1,4 @@
-package br.com.tattobr.samples.mrnom.framework.impl;
+package br.com.tattobr.samples.framework.impl;
 
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
@@ -10,8 +10,8 @@ import android.graphics.Rect;
 import java.io.IOException;
 import java.io.InputStream;
 
-import br.com.tattobr.samples.mrnom.framework.Graphics;
-import br.com.tattobr.samples.mrnom.framework.Pixmap;
+import br.com.tattobr.samples.framework.Graphics;
+import br.com.tattobr.samples.framework.Pixmap;
 
 public class AndroidGraphics implements Graphics {
     private AssetManager assets;

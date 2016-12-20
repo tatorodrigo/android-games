@@ -1,11 +1,11 @@
-package br.com.tattobr.samples.mrnom.framework.impl;
+package br.com.tattobr.samples.framework.impl;
 
 import android.content.Context;
 import android.view.View;
 
 import java.util.List;
 
-import br.com.tattobr.samples.mrnom.framework.Input;
+import br.com.tattobr.samples.framework.Input;
 
 public class AndroidInput implements Input {
     private AndroidAccelerometerHandler androidAccelerometerHandler;

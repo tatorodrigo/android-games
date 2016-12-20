@@ -1,8 +1,8 @@
-package br.com.tattobr.samples.mrnom.framework.impl;
+package br.com.tattobr.samples.framework.impl;
 
 import android.media.SoundPool;
 
-import br.com.tattobr.samples.mrnom.framework.Sound;
+import br.com.tattobr.samples.framework.Sound;
 
 public class AndroidSound implements Sound {
     private int soundId;
