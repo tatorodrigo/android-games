@@ -15,6 +15,7 @@ import br.com.tattobr.samples.framework.Game;
 import br.com.tattobr.samples.framework.Graphics;
 import br.com.tattobr.samples.framework.Input;
 import br.com.tattobr.samples.framework.Screen;
+import br.com.tattobr.samples.mrnom.utils.AssetsUtil;
 
 public abstract class AndroidGame extends Activity implements Game {
     private AndroidFastRenderView renderView;
@@ -35,11 +36,14 @@ public abstract class AndroidGame extends Activity implements Game {
                         WindowManager.LayoutParams.FLAG_FULLSCREEN
         );
 
-        //float gameMultiplier = 1f;
-        float gameMultiplier = 2.6f;
+        AssetsUtil.GRAPHICS_RESOLUTION = 2.6f;
+        AssetsUtil.GRAPHICS_SUFIX = "_hd";
 
-        final int GAME_WIDTH = (int) (480 * gameMultiplier);
-        final int GAME_HEIGHT = (int) (320 * gameMultiplier);
+        //AssetsUtil.GRAPHICS_RESOLUTION = 1f;
+        //AssetsUtil.GRAPHICS_SUFIX = "";
+
+        final int GAME_WIDTH = (int) (480 * AssetsUtil.GRAPHICS_RESOLUTION);
+        final int GAME_HEIGHT = (int) (320 * AssetsUtil.GRAPHICS_RESOLUTION);
 
         Resources resources = getResources();
         boolean isLandscape = resources.getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
