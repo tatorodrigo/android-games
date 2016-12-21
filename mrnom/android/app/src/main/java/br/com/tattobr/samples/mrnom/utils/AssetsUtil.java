@@ -20,6 +20,7 @@ public class AssetsUtil {
     public static int BUTTONS_SIZE;
     public static int NUMBERS_SIZE;
     public static int DOT_SIZE;
+    public static int GAME_CELL_SIZE;
 
     public static Pixmap background;
     public static Pixmap logo;
@@ -57,6 +58,7 @@ public class AssetsUtil {
         BUTTONS_SIZE = (int) (64 * GRAPHICS_RESOLUTION);
         NUMBERS_SIZE = (int) (20 * GRAPHICS_RESOLUTION);
         DOT_SIZE = (int) (10 * GRAPHICS_RESOLUTION);
+        GAME_CELL_SIZE = (int) (32 * GRAPHICS_RESOLUTION);
     }
 
     public static void loadGraphics(Graphics graphics) {
