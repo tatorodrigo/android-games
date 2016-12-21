@@ -82,8 +82,6 @@ public class AndroidFastRenderView extends SurfaceView implements Runnable {
         Rect dstRect = new Rect();
         long startTime = System.nanoTime();
 
-        srcRect.set(0, 0, frameBuffer.getWidth(), frameBuffer.getHeight());
-
         while (running) {
             if (!holder.getSurface().isValid()) {
                 continue;
@@ -98,6 +96,7 @@ public class AndroidFastRenderView extends SurfaceView implements Runnable {
             canvas.getClipBounds(dstRect);
 
             dstRectF.set(dstRect);
+            srcRect.set(0, 0, frameBuffer.getWidth(), frameBuffer.getHeight());
             matrix.setRectToRect(srcRect, dstRectF, Matrix.ScaleToFit.CENTER);
             matrix.mapRect(srcRect);
             dstRect.set((int) srcRect.left, (int) srcRect.top, (int) srcRect.right, (int) srcRect.bottom);

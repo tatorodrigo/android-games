@@ -202,6 +202,7 @@ public class GameScreen extends Screen {
         int diffX = (head.getWidth() - AssetsUtil.GAME_CELL_SIZE) / 2;
         int diffY = (head.getHeight() - AssetsUtil.GAME_CELL_SIZE) / 2;
         graphics.drawPixmap(head, snakePart.x * AssetsUtil.GAME_CELL_SIZE - diffX, snakePart.y * AssetsUtil.GAME_CELL_SIZE - diffY);
+        //graphics.drawPixmap(head, snakePart.x * AssetsUtil.GAME_CELL_SIZE, snakePart.y * AssetsUtil.GAME_CELL_SIZE);
     }
 
     private void drawGameStateReadyUI() {
