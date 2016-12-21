@@ -54,7 +54,7 @@ public class AssetsUtil {
         HIGH_SCORE_LINE_Y = (int) (100 * GRAPHICS_RESOLUTION);
         HIGH_SCORE_LINE_SPACING = (int) (50 * GRAPHICS_RESOLUTION);
         HELP_Y = (int) (100 * GRAPHICS_RESOLUTION);
-        BUTTONS_SIZE = (int) (60 * GRAPHICS_RESOLUTION);
+        BUTTONS_SIZE = (int) (64 * GRAPHICS_RESOLUTION);
         NUMBERS_SIZE = (int) (20 * GRAPHICS_RESOLUTION);
         DOT_SIZE = (int) (10 * GRAPHICS_RESOLUTION);
     }
