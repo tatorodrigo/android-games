@@ -50,7 +50,7 @@ public class AndroidFastRenderView extends SurfaceView implements Runnable {
         holder = getHolder();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            setSystemUiVisibility(SYSTEM_UI_FLAG_FULLSCREEN | SYSTEM_UI_FLAG_HIDE_NAVIGATION | SYSTEM_UI_FLAG_IMMERSIVE);
+            setSystemUiVisibility(SYSTEM_UI_FLAG_FULLSCREEN | SYSTEM_UI_FLAG_HIDE_NAVIGATION | SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         }
     }
 
@@ -76,9 +76,9 @@ public class AndroidFastRenderView extends SurfaceView implements Runnable {
     @Override
     public void run() {
         final float nanoTimeToSeconds = 1000000000.0f;
-        Matrix matrix = new Matrix();
+        /*Matrix matrix = new Matrix();
         RectF srcRect = new RectF();
-        RectF dstRectF = new RectF();
+        RectF dstRectF = new RectF();*/
         Rect dstRect = new Rect();
         long startTime = System.nanoTime();
 
@@ -95,11 +95,11 @@ public class AndroidFastRenderView extends SurfaceView implements Runnable {
             Canvas canvas = holder.lockCanvas();
             canvas.getClipBounds(dstRect);
 
-            dstRectF.set(dstRect);
+            /*dstRectF.set(dstRect);
             srcRect.set(0, 0, frameBuffer.getWidth(), frameBuffer.getHeight());
             matrix.setRectToRect(srcRect, dstRectF, Matrix.ScaleToFit.CENTER);
             matrix.mapRect(srcRect);
-            dstRect.set((int) srcRect.left, (int) srcRect.top, (int) srcRect.right, (int) srcRect.bottom);
+            dstRect.set((int) srcRect.left, (int) srcRect.top, (int) srcRect.right, (int) srcRect.bottom);*/
 
             //canvas.drawColor(0xFFFFFFCC);
             canvas.drawBitmap(frameBuffer, null, dstRect, null);
