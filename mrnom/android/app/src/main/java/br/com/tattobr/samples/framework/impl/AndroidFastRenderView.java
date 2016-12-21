@@ -46,6 +46,10 @@ public class AndroidFastRenderView extends SurfaceView implements Runnable {
 
         this.androidGame = (AndroidGame) context;
         holder = getHolder();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            setSystemUiVisibility(SYSTEM_UI_FLAG_FULLSCREEN | SYSTEM_UI_FLAG_HIDE_NAVIGATION | SYSTEM_UI_FLAG_IMMERSIVE);
+        }
     }
 
     public void resume(Bitmap frameBuffer) {
