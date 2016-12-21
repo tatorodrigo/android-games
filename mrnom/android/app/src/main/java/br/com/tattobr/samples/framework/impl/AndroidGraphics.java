@@ -25,7 +25,7 @@ public class AndroidGraphics implements Graphics {
         this.assets = assets;
         this.frameBuffer = frameBuffer;
         this.canvas = new Canvas(frameBuffer);
-        this.paint = new Paint();
+        this.paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     }
 
     @Override
