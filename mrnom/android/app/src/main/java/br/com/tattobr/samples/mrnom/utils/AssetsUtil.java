@@ -12,6 +12,9 @@ public class AssetsUtil {
     public static int MAIN_MENU_LOGO_Y;
     public static int MAIN_MENU_OPTIONS_Y;
     public static int MAIN_MENU_OPTIONS_HEIGHT;
+    public static int GAME_READY_Y;
+    public static int GAME_OVER_PAUSE_Y;
+    public static int GAME_SCORE_Y_DECREMENT;
     public static int HIGH_SCORE_Y;
     public static int HIGH_SCORE_LINE_X;
     public static int HIGH_SCORE_LINE_Y;
@@ -50,6 +53,9 @@ public class AssetsUtil {
         MAIN_MENU_LOGO_Y = (int) (20 * GRAPHICS_RESOLUTION);
         MAIN_MENU_OPTIONS_Y = (int) (220 * GRAPHICS_RESOLUTION);
         MAIN_MENU_OPTIONS_HEIGHT = (int) (42 * GRAPHICS_RESOLUTION);
+        GAME_READY_Y = (int) (47 * GRAPHICS_RESOLUTION);
+        GAME_OVER_PAUSE_Y = (int) (100 * GRAPHICS_RESOLUTION);
+        GAME_SCORE_Y_DECREMENT = (int) (42 * GRAPHICS_RESOLUTION);
         HIGH_SCORE_Y = (int) (20 * GRAPHICS_RESOLUTION);
         HIGH_SCORE_LINE_X = (int) (20 * GRAPHICS_RESOLUTION);
         HIGH_SCORE_LINE_Y = (int) (100 * GRAPHICS_RESOLUTION);

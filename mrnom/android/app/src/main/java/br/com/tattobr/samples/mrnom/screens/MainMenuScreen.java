@@ -35,6 +35,7 @@ public class MainMenuScreen extends Screen {
                     }
                     break;
                 } else if (inBounds(touchEvent, mainMenuX, AssetsUtil.MAIN_MENU_OPTIONS_Y, mainMenuWidth, AssetsUtil.MAIN_MENU_OPTIONS_HEIGHT)) {
+                    game.setScreen(new GameScreen(game));
                     if (SettingsUtil.soundEnabled) {
                         AssetsUtil.click.play(1);
                     }

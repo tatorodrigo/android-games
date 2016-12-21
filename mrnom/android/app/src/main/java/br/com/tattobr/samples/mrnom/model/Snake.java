@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Snake {
-    public final int UP = 0;
-    public final int LEFT = 1;
-    public final int DOWN = 2;
-    public final int RIGHT = 3;
+    public static final int UP = 0;
+    public static final int LEFT = 1;
+    public static final int DOWN = 2;
+    public static final int RIGHT = 3;
 
     public List<SnakePart> parts;
     public int direction;
@@ -29,7 +29,7 @@ public class Snake {
 
     public void turnLeft() {
         direction += 1;
-        if (direction < RIGHT) {
+        if (direction > RIGHT) {
             direction = UP;
         }
     }
@@ -89,7 +89,7 @@ public class Snake {
         SnakePart tail;
         for (int i = 1; i < length; i++) {
             tail = parts.get(i);
-            if (tail.x == head.x && tail.y == head.x) {
+            if (tail.x == head.x && tail.y == head.y) {
                 return true;
             }
         }

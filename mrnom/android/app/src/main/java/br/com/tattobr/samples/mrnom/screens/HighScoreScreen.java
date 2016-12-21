@@ -8,6 +8,7 @@ import br.com.tattobr.samples.framework.Input;
 import br.com.tattobr.samples.framework.Screen;
 import br.com.tattobr.samples.mrnom.utils.AssetsUtil;
 import br.com.tattobr.samples.mrnom.utils.SettingsUtil;
+import br.com.tattobr.samples.mrnom.utils.TextUtil;
 
 public class HighScoreScreen extends Screen {
     private final String[] lines = new String[5];
@@ -55,7 +56,7 @@ public class HighScoreScreen extends Screen {
         int x = AssetsUtil.HIGH_SCORE_LINE_X;
         int y = AssetsUtil.HIGH_SCORE_LINE_Y;
         for (int i = 0; i < 5; i++) {
-            drawText(graphics, lines[i], x, y);
+            TextUtil.drawText(graphics, lines[i], x, y);
 
             y += AssetsUtil.HIGH_SCORE_LINE_SPACING;
         }
@@ -74,30 +75,5 @@ public class HighScoreScreen extends Screen {
     @Override
     public void dispose() {
 
-    }
-
-    private void drawText(Graphics graphics, String line, int x, int y) {
-        int length = line.length();
-        char character;
-        for (int i = 0; i < length; i++) {
-            character = line.charAt(i);
-
-            if (character == ' ') {
-                x += AssetsUtil.NUMBERS_SIZE;
-                continue;
-            }
-
-            int srcX = 0;
-            int srcWidth = 0;
-            if (character == '.') {
-                srcX = 10 * AssetsUtil.NUMBERS_SIZE;
-                srcWidth = AssetsUtil.DOT_SIZE;
-            } else {
-                srcX = (character - '0') * AssetsUtil.NUMBERS_SIZE;
-                srcWidth = AssetsUtil.NUMBERS_SIZE;
-            }
-            graphics.drawPixmap(AssetsUtil.numbers, x, y, srcX, 0, srcWidth, AssetsUtil.numbers.getHeight());
-            x += srcWidth;
-        }
     }
 }

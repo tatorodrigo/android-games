@@ -72,27 +72,37 @@ public class World {
 
         while (tickTime > tick) {
             tickTime -= tick;
-            snake.advance();
-            if (snake.checkBitten()) {
+
+            advanceSnakeInternal();
+        }
+    }
+
+    private void advanceSnakeInternal() {
+        snake.advance();
+        if (snake.checkBitten()) {
+            gameOver = true;
+            return;
+        }
+
+        SnakePart head = snake.parts.get(0);
+        if (head.x == stain.x && head.y == stain.y) {
+            score += SCORE_INCREMENT;
+            snake.eat();
+            if (snake.parts.size() == WORLD_WIDTH * WORLD_HEIGHT) {
                 gameOver = true;
                 return;
+            } else {
+                placeStain();
             }
 
-            SnakePart head = snake.parts.get(0);
-            if (head.x == stain.x && head.y == stain.y) {
-                score += SCORE_INCREMENT;
-                snake.eat();
-                if (snake.parts.size() == WORLD_WIDTH * WORLD_HEIGHT) {
-                    gameOver = true;
-                    return;
-                } else {
-                    placeStain();
-                }
-
-                if (score % 100 == 0 && tick - TICK_DECREMENT > 0) {
-                    tick -= TICK_DECREMENT;
-                }
+            if (score % 100 == 0 && tick - TICK_DECREMENT > 0) {
+                tick -= TICK_DECREMENT;
             }
         }
+    }
+
+    public void advanceSnake() {
+        tickTime = 0;
+        advanceSnakeInternal();
     }
 }
