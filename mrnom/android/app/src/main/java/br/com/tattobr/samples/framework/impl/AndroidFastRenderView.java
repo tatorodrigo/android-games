@@ -4,7 +4,9 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.Rect;
+import android.graphics.RectF;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.view.SurfaceHolder;
@@ -74,8 +76,13 @@ public class AndroidFastRenderView extends SurfaceView implements Runnable {
     @Override
     public void run() {
         final float nanoTimeToSeconds = 1000000000.0f;
+        Matrix matrix = new Matrix();
+        RectF srcRect = new RectF();
+        RectF dstRectF = new RectF();
         Rect dstRect = new Rect();
         long startTime = System.nanoTime();
+
+        srcRect.set(0, 0, frameBuffer.getWidth(), frameBuffer.getHeight());
 
         while (running) {
             if (!holder.getSurface().isValid()) {
@@ -89,6 +96,13 @@ public class AndroidFastRenderView extends SurfaceView implements Runnable {
 
             Canvas canvas = holder.lockCanvas();
             canvas.getClipBounds(dstRect);
+
+            dstRectF.set(dstRect);
+            matrix.setRectToRect(srcRect, dstRectF, Matrix.ScaleToFit.CENTER);
+            matrix.mapRect(srcRect);
+            dstRect.set((int) srcRect.left, (int) srcRect.top, (int) srcRect.right, (int) srcRect.bottom);
+
+            //canvas.drawColor(0xFFFFFFCC);
             canvas.drawBitmap(frameBuffer, null, dstRect, null);
             holder.unlockCanvasAndPost(canvas);
         }
