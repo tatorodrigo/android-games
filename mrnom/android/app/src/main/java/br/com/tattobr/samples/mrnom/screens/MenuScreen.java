@@ -7,7 +7,7 @@ import br.com.tattobr.samples.framework.Screen;
 import br.com.tattobr.samples.framework.Sound;
 
 public class MenuScreen extends Screen {
-    private final int BLOCK_SIZE = 50;
+    private final int BLOCK_SIZE = 130;
     private float x;
     private float y;
     private StringBuffer stringBuffer;
@@ -21,7 +21,7 @@ public class MenuScreen extends Screen {
         stringBuffer = new StringBuffer();
         eat = game.getAudio().newSound("eat.ogg");
         bg = game.getGraphics().newPixmap("background_hd.png", Graphics.PixmapFormat.ARGB4444);
-        mainmenu = game.getGraphics().newPixmap("mainmenu.png", Graphics.PixmapFormat.ARGB4444);
+        mainmenu = game.getGraphics().newPixmap("mainmenu_hd.png", Graphics.PixmapFormat.ARGB4444);
     }
 
     @Override

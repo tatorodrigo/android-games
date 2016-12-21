@@ -35,8 +35,11 @@ public abstract class AndroidGame extends Activity implements Game {
                         WindowManager.LayoutParams.FLAG_FULLSCREEN
         );
 
-        final int GAME_WIDTH = 480;
-        final int GAME_HEIGHT = 320;
+        //float gameMultiplier = 1f;
+        float gameMultiplier = 2.6f;
+
+        final int GAME_WIDTH = (int) (480 * gameMultiplier);
+        final int GAME_HEIGHT = (int) (320 * gameMultiplier);
 
         Resources resources = getResources();
         boolean isLandscape = resources.getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
