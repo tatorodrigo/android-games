@@ -124,4 +124,11 @@ public abstract class AndroidGame extends Activity implements Game {
     public Screen getCurrentScreen() {
         return screen;
     }
+
+    @Override
+    public void onBackPressed() {
+        if (!screen.onBackPressed()) {
+            super.onBackPressed();
+        }
+    }
 }

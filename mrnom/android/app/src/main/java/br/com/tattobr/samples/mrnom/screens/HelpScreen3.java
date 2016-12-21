@@ -61,4 +61,10 @@ public class HelpScreen3 extends Screen {
     public void dispose() {
 
     }
+
+    @Override
+    public boolean onBackPressed() {
+        game.setScreen(new MainMenuScreen(game));
+        return true;
+    }
 }
