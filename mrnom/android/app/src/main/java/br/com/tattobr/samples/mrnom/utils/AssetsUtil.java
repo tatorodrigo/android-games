@@ -12,6 +12,7 @@ public class AssetsUtil {
     public static int MAIN_MENU_LOGO_Y;
     public static int MAIN_MENU_OPTIONS_Y;
     public static int MAIN_MENU_OPTIONS_HEIGHT;
+    public static int HELP_Y;
     public static int BUTTONS_SIZE;
 
     public static Pixmap background;
@@ -42,6 +43,7 @@ public class AssetsUtil {
         MAIN_MENU_LOGO_Y = (int) (20 * GRAPHICS_RESOLUTION);
         MAIN_MENU_OPTIONS_Y = (int) (220 * GRAPHICS_RESOLUTION);
         MAIN_MENU_OPTIONS_HEIGHT = (int) (42 * GRAPHICS_RESOLUTION);
+        HELP_Y = (int) (100 * GRAPHICS_RESOLUTION);
         BUTTONS_SIZE = (int) (60 * GRAPHICS_RESOLUTION);
     }
 
