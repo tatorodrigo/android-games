@@ -33,19 +33,24 @@ public class MainMenuScreen extends Screen {
                     if (SettingsUtil.soundEnabled) {
                         AssetsUtil.click.play(1);
                     }
+                    break;
                 } else if (inBounds(touchEvent, mainMenuX, AssetsUtil.MAIN_MENU_OPTIONS_Y, mainMenuWidth, AssetsUtil.MAIN_MENU_OPTIONS_HEIGHT)) {
                     if (SettingsUtil.soundEnabled) {
                         AssetsUtil.click.play(1);
                     }
+                    break;
                 } else if (inBounds(touchEvent, mainMenuX, AssetsUtil.MAIN_MENU_OPTIONS_Y + AssetsUtil.MAIN_MENU_OPTIONS_HEIGHT, mainMenuWidth, AssetsUtil.MAIN_MENU_OPTIONS_HEIGHT)) {
+                    game.setScreen(new HighScoreScreen(game));
                     if (SettingsUtil.soundEnabled) {
                         AssetsUtil.click.play(1);
                     }
+                    break;
                 } else if (inBounds(touchEvent, mainMenuX, AssetsUtil.MAIN_MENU_OPTIONS_Y + AssetsUtil.MAIN_MENU_OPTIONS_HEIGHT * 2, mainMenuWidth, AssetsUtil.MAIN_MENU_OPTIONS_HEIGHT)) {
                     game.setScreen(new HelpScreen(game));
                     if (SettingsUtil.soundEnabled) {
                         AssetsUtil.click.play(1);
                     }
+                    break;
                 }
             }
         }

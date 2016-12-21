@@ -12,8 +12,14 @@ public class AssetsUtil {
     public static int MAIN_MENU_LOGO_Y;
     public static int MAIN_MENU_OPTIONS_Y;
     public static int MAIN_MENU_OPTIONS_HEIGHT;
+    public static int HIGH_SCORE_Y;
+    public static int HIGH_SCORE_LINE_X;
+    public static int HIGH_SCORE_LINE_Y;
+    public static int HIGH_SCORE_LINE_SPACING;
     public static int HELP_Y;
     public static int BUTTONS_SIZE;
+    public static int NUMBERS_SIZE;
+    public static int DOT_SIZE;
 
     public static Pixmap background;
     public static Pixmap logo;
@@ -43,8 +49,14 @@ public class AssetsUtil {
         MAIN_MENU_LOGO_Y = (int) (20 * GRAPHICS_RESOLUTION);
         MAIN_MENU_OPTIONS_Y = (int) (220 * GRAPHICS_RESOLUTION);
         MAIN_MENU_OPTIONS_HEIGHT = (int) (42 * GRAPHICS_RESOLUTION);
+        HIGH_SCORE_Y = (int) (20 * GRAPHICS_RESOLUTION);
+        HIGH_SCORE_LINE_X = (int) (20 * GRAPHICS_RESOLUTION);
+        HIGH_SCORE_LINE_Y = (int) (100 * GRAPHICS_RESOLUTION);
+        HIGH_SCORE_LINE_SPACING = (int) (50 * GRAPHICS_RESOLUTION);
         HELP_Y = (int) (100 * GRAPHICS_RESOLUTION);
         BUTTONS_SIZE = (int) (60 * GRAPHICS_RESOLUTION);
+        NUMBERS_SIZE = (int) (20 * GRAPHICS_RESOLUTION);
+        DOT_SIZE = (int) (10 * GRAPHICS_RESOLUTION);
     }
 
     public static void loadGraphics(Graphics graphics) {
