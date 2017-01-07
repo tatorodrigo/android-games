@@ -15,6 +15,7 @@ public class StartActivity extends Activity {
         //startActivity(new Intent(getApplicationContext(), TextureActivity.class));
         //startActivity(new Intent(getApplicationContext(), MultipleTexturesActivity.class));
         //startActivity(new Intent(getApplicationContext(), MultipleTexturesRotationActivity.class));
-        startActivity(new Intent(getApplicationContext(), MultipleTexturesAccelerometerActivity.class));
+        //startActivity(new Intent(getApplicationContext(), MultipleTexturesAccelerometerActivity.class));
+        startActivity(new Intent(getApplicationContext(), AspectRatioActivity.class));
     }
 }

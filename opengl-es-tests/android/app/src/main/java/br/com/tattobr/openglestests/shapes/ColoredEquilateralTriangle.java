@@ -15,6 +15,8 @@ public class ColoredEquilateralTriangle {
     private float base;
     private float height;
     private float[] vertex;
+    private float r, g, b, a;
+    private float aspectRatio;
 
     public ColoredEquilateralTriangle(float base, float height, int color) {
         vertex = new float[18];
@@ -22,28 +24,42 @@ public class ColoredEquilateralTriangle {
         byteBuffer.order(ByteOrder.nativeOrder());
 
         floatBuffer = byteBuffer.asFloatBuffer();
-        this.base = base;
-        this.height = height;
 
-
-        setColor(color);
+        set(base, height, 1f, color);
     }
 
-    public void setColor(float r, float g, float b, float a) {
+    private void set(float base, float height, float aspectRatio, int color) {
+        float a = (float) ((color >> 24) & 0xFF) / 255;
+        float r = (float) ((color >> 16) & 0xFF) / 255;
+        float g = (float) ((color >> 8) & 0xFF) / 255;
+        float b = (float) (color & 0xFF) / 255;
+
+        set(base, height, aspectRatio, r, g, b, a);
+    }
+
+    private void set(float base, float height, float aspectRatio, float r, float g, float b, float a) {
+        this.base = base;
+        this.height = height;
+        this.aspectRatio = aspectRatio;
+        this.r = r;
+        this.g = g;
+        this.b = b;
+        this.a = a;
+
         vertex[0] = 0;
         vertex[1] = 0;
         vertex[2] = r;
         vertex[3] = g;
         vertex[4] = b;
         vertex[5] = a;
-        vertex[6] = base;
+        vertex[6] = aspectRatio * base;
         vertex[7] = 0;
         vertex[8] = r;
         vertex[9] = g;
         vertex[10] = b;
         vertex[11] = a;
-        vertex[12] = base / 2;
-        vertex[13] = height;
+        vertex[12] = aspectRatio * base / 2;
+        vertex[13] = aspectRatio * height;
         vertex[14] = r;
         vertex[15] = g;
         vertex[16] = b;
@@ -60,7 +76,15 @@ public class ColoredEquilateralTriangle {
         float g = (float) ((color >> 8) & 0xFF) / 255;
         float b = (float) (color & 0xFF) / 255;
 
-        setColor(r, g, b, a);
+        set(base, height, aspectRatio, r, g, b, a);
+    }
+
+    public void setSize(float base, float height) {
+        set(base, height, aspectRatio, r, g, b, a);
+    }
+
+    public void setAspectRatio(float aspectRatio) {
+        set(base, height, aspectRatio, r, g, b, a);
     }
 
     public void bindColorAndPoint(GL10 gl10) {

@@ -19,6 +19,7 @@
         <activity android:name=".MultipleTexturesActivity" />
         <activity android:name=".MultipleTexturesRotationActivity" />
         <activity android:name=".MultipleTexturesAccelerometerActivity" />
+        <activity android:name=".AspectRatioActivity" />
     </application>
 
 </manifest>
