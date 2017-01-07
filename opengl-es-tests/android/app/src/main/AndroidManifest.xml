@@ -15,6 +15,10 @@
         <activity android:name=".ChangeScreenColorActivity" />
         <activity android:name=".ShapesActivity" />
         <activity android:name=".ColoredShapesActivity" />
+        <activity android:name=".TextureActivity" />
+        <activity android:name=".MultipleTexturesActivity" />
+        <activity android:name=".MultipleTexturesRotationActivity" />
+        <activity android:name=".MultipleTexturesAccelerometerActivity" />
     </application>
 
 </manifest>

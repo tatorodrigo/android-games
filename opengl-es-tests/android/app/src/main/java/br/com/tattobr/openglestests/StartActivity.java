@@ -11,6 +11,10 @@ public class StartActivity extends Activity {
 
         //startActivity(new Intent(getApplicationContext(), ChangeScreenColorActivity.class));
         //startActivity(new Intent(getApplicationContext(), ShapesActivity.class));
-        startActivity(new Intent(getApplicationContext(), ColoredShapesActivity.class));
+        //startActivity(new Intent(getApplicationContext(), ColoredShapesActivity.class));
+        //startActivity(new Intent(getApplicationContext(), TextureActivity.class));
+        //startActivity(new Intent(getApplicationContext(), MultipleTexturesActivity.class));
+        //startActivity(new Intent(getApplicationContext(), MultipleTexturesRotationActivity.class));
+        startActivity(new Intent(getApplicationContext(), MultipleTexturesAccelerometerActivity.class));
     }
 }

@@ -13,8 +13,7 @@ public class FPSUtil {
     private long startTime;
 
     public FPSUtil() {
-        frames = 0;
-        startTime = System.nanoTime();
+        reset();
     }
 
     public void logFPS() {
@@ -25,5 +24,10 @@ public class FPSUtil {
             frames = 0;
             startTime = now;
         }
+    }
+
+    public void reset() {
+        frames = 0;
+        startTime = System.nanoTime();
     }
 }
