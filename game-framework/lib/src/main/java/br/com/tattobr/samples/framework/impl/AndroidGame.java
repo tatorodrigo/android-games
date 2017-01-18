@@ -15,7 +15,6 @@ import br.com.tattobr.samples.framework.Game;
 import br.com.tattobr.samples.framework.Graphics;
 import br.com.tattobr.samples.framework.Input;
 import br.com.tattobr.samples.framework.Screen;
-import br.com.tattobr.samples.mrnom.utils.AssetsUtil;
 
 public abstract class AndroidGame extends Activity implements Game {
     private AndroidFastRenderView renderView;
@@ -25,6 +24,10 @@ public abstract class AndroidGame extends Activity implements Game {
     private FileIO fileIO;
     private Screen screen;
     private Bitmap frameBuffer;
+
+    protected abstract int getGameWidth();
+
+    protected abstract int getGameHeight();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,14 +39,8 @@ public abstract class AndroidGame extends Activity implements Game {
                         WindowManager.LayoutParams.FLAG_FULLSCREEN
         );
 
-        AssetsUtil.GRAPHICS_RESOLUTION = 2.6f;
-        AssetsUtil.GRAPHICS_SUFIX = "_hd";
-
-        //AssetsUtil.GRAPHICS_RESOLUTION = 1f;
-        //AssetsUtil.GRAPHICS_SUFIX = "";
-
-        final int GAME_WIDTH = (int) (480 * AssetsUtil.GRAPHICS_RESOLUTION);
-        final int GAME_HEIGHT = (int) (320 * AssetsUtil.GRAPHICS_RESOLUTION);
+        final int GAME_WIDTH = getGameWidth();
+        final int GAME_HEIGHT = getGameHeight();
 
         Resources resources = getResources();
         boolean isLandscape = resources.getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
@@ -110,7 +107,7 @@ public abstract class AndroidGame extends Activity implements Game {
     @Override
     public void setScreen(Screen screen) {
         if (screen == null) {
-            throw new IllegalArgumentException("Screen muds not be null");
+            throw new IllegalArgumentException("Screen must not be null");
         }
 
         this.screen.pause();
