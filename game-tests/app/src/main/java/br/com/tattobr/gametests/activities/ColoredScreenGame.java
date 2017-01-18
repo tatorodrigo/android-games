@@ -1,11 +1,8 @@
-package br.com.tattobr.samples.tests;
+package br.com.tattobr.gametests.activities;
 
+import br.com.tattobr.gametests.screens.ColoredScreen;
 import br.com.tattobr.samples.framework.Screen;
 import br.com.tattobr.samples.framework.impl.AndroidGLGame;
-
-/**
- * Created by tattobr on 07/01/2017.
- */
 
 public class ColoredScreenGame extends AndroidGLGame {
     @Override

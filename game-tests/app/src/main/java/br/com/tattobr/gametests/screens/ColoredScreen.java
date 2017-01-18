@@ -1,4 +1,4 @@
-package br.com.tattobr.samples.tests;
+package br.com.tattobr.gametests.screens;
 
 import java.util.Random;
 
