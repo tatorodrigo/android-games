@@ -11,13 +11,13 @@ import javax.microedition.khronos.opengles.GL10;
 
 import br.com.tattobr.samples.framework.Audio;
 import br.com.tattobr.samples.framework.FileIO;
+import br.com.tattobr.samples.framework.GLGame;
 import br.com.tattobr.samples.framework.GLGraphics;
-import br.com.tattobr.samples.framework.Game;
 import br.com.tattobr.samples.framework.Graphics;
 import br.com.tattobr.samples.framework.Input;
 import br.com.tattobr.samples.framework.Screen;
 
-public abstract class AndroidGLGame extends Activity implements Game, GLSurfaceView.Renderer {
+public abstract class AndroidGLGame extends Activity implements GLGame, GLSurfaceView.Renderer {
     enum GLGameState {
         Initialized, Running, Paused, Finished, Idle
     }

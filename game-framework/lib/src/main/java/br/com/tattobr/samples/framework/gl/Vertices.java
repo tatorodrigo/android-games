@@ -5,6 +5,8 @@ import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.nio.ShortBuffer;
 
+import javax.microedition.khronos.opengles.GL10;
+
 import br.com.tattobr.samples.framework.GLGraphics;
 
 public class Vertices {
@@ -45,5 +47,49 @@ public class Vertices {
         this.indexes.clear();
         this.indexes.put(indexes, offset, length);
         this.indexes.flip();
+    }
+
+    public void bind() {
+        GL10 gl = glGraphics.getGl();
+        gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
+        vertices.position(0);
+        gl.glVertexPointer(2, GL10.GL_FLOAT, vertexSize, vertices);
+
+        if (hasColor) {
+            gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
+            vertices.position(2);
+            gl.glColorPointer(4, GL10.GL_FLOAT, vertexSize, vertices);
+        }
+
+        if (hasTexCoords) {
+            gl.glEnableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
+            vertices.position(hasColor ? 6 : 2);
+            gl.glTexCoordPointer(2, GL10.GL_FLOAT, vertexSize, vertices);
+        }
+    }
+
+    public void draw(int primitiveType, int offset, int numVertices) {
+        GL10 gl = glGraphics.getGl();
+
+        if (indexes != null) {
+            indexes.position(offset);
+            gl.glDrawElements(primitiveType, numVertices, GL10.GL_UNSIGNED_SHORT, indexes);
+        } else {
+            gl.glDrawArrays(primitiveType, offset, numVertices);
+        }
+    }
+
+    public void unbind() {
+        GL10 gl = glGraphics.getGl();
+
+        gl.glDisableClientState(GL10.GL_VERTEX_ARRAY);
+
+        if (hasColor) {
+            gl.glDisableClientState(GL10.GL_COLOR_ARRAY);
+        }
+
+        if (hasTexCoords) {
+            gl.glDisableClientState(GL10.GL_TEXTURE_COORD_ARRAY);
+        }
     }
 }
