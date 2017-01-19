@@ -16,13 +16,14 @@ import br.com.tattobr.samples.framework.GLGraphics;
 import br.com.tattobr.samples.framework.Graphics;
 import br.com.tattobr.samples.framework.Input;
 import br.com.tattobr.samples.framework.Screen;
+import br.com.tattobr.samples.framework.view.GLSurfaceGameView;
 
 public abstract class AndroidGLGame extends Activity implements GLGame, GLSurfaceView.Renderer {
     enum GLGameState {
         Initialized, Running, Paused, Finished, Idle
     }
 
-    private GLSurfaceView glView;
+    private GLSurfaceGameView glView;
     private GLGraphics graphics;
     private Audio audio;
     private Input input;
@@ -42,7 +43,7 @@ public abstract class AndroidGLGame extends Activity implements GLGame, GLSurfac
                         WindowManager.LayoutParams.FLAG_FULLSCREEN
         );
 
-        glView = new GLSurfaceView(this);
+        glView = new GLSurfaceGameView(this);
         glView.setRenderer(this);
 
         graphics = new GLGraphics(glView);
