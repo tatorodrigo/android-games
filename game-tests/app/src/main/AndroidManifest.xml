@@ -15,6 +15,7 @@
         </activity>
         <activity android:name=".activities.ColoredScreenGame" />
         <activity android:name=".activities.CannonRotationGame" />
+        <activity android:name=".activities.CannonGravityGame" />
     </application>
 
 </manifest>
