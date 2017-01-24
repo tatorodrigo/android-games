@@ -110,7 +110,7 @@ public abstract class AndroidGLGame extends Activity implements GLGame, GLSurfac
         }
 
         if (GLGameState.Running.equals(state)) {
-            float deltaTime = (System.nanoTime() - startTime) / 1000000000;
+            float deltaTime = (System.nanoTime() - startTime) / 1000000000.0f;
             startTime = System.nanoTime();
 
             screen.update(deltaTime);
