@@ -10,8 +10,8 @@ import java.io.InputStream;
 import javax.microedition.khronos.opengles.GL10;
 
 import br.com.tattobr.samples.framework.FileIO;
+import br.com.tattobr.samples.framework.GLGame;
 import br.com.tattobr.samples.framework.GLGraphics;
-import br.com.tattobr.samples.framework.impl.AndroidGLGame;
 
 public class Texture {
     private GLGraphics glGraphics;
@@ -21,7 +21,7 @@ public class Texture {
     private int minFilter;
     private int magFilter;
 
-    public Texture(AndroidGLGame glGame, String filename) {
+    public Texture(GLGame glGame, String filename) {
         this.glGraphics = glGame.getGLGraphics();
         this.fileIO = glGame.getFileIO();
         this.filename = filename;
@@ -42,6 +42,7 @@ public class Texture {
             GLUtils.texImage2D(GL10.GL_TEXTURE_2D, 0, bitmap, 0);
             setFilters(GL10.GL_NEAREST, GL10.GL_NEAREST);
             gl10.glBindTexture(GL10.GL_TEXTURE_2D, 0);
+            bitmap.recycle();
         } catch (IOException e) {
             throw new RuntimeException("Could not load texture '" + filename + "'", e);
         } finally {
@@ -62,7 +63,7 @@ public class Texture {
         glGraphics.getGl().glBindTexture(GL10.GL_TEXTURE_2D, 0);
     }
 
-    private void setFilters(int minFilter, int magFilter) {
+    public void setFilters(int minFilter, int magFilter) {
         this.minFilter = minFilter;
         this.magFilter = magFilter;
 
@@ -71,7 +72,7 @@ public class Texture {
         gl10.glTexParameterf(GL10.GL_TEXTURE_2D, GL10.GL_TEXTURE_MAG_FILTER, magFilter);
     }
 
-    private void bind() {
+    public void bind() {
         GL10 gl10 = glGraphics.getGl();
         gl10.glBindTexture(GL10.GL_TEXTURE_2D, textureId);
     }

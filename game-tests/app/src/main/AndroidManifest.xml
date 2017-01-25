@@ -18,6 +18,7 @@
         <activity android:name=".activities.CannonGravityGame" />
         <activity android:name=".activities.CannonCollisionGame" />
         <activity android:name=".activities.CannonCollisionCameraGame" />
+        <activity android:name=".activities.CannonCollisionTextureAtlasGame" />
     </application>
 
 </manifest>
