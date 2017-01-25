@@ -22,7 +22,7 @@ public class Camera2D {
 
     public void setViewportAndMatrices() {
         GL10 gl10 = graphics.getGl();
-        gl10.glViewport(0, graphics.getWidth(), 0, graphics.getHeight());
+        gl10.glViewport(0, 0, graphics.getWidth(), graphics.getHeight());
         gl10.glMatrixMode(GL10.GL_PROJECTION);
         gl10.glLoadIdentity();
         gl10.glOrthof(
