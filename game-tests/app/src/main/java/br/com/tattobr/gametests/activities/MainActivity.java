@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         mData.add(new GameTestData("Colored Game", ColoredScreenGame.class));
         mData.add(new GameTestData("Cannon Rotation", CannonRotationGame.class));
         mData.add(new GameTestData("Cannon Gravity", CannonGravityGame.class));
+        mData.add(new GameTestData("Cannon Collision", CannonCollisionGame.class));
     }
 
     private void initRecyclerView() {
