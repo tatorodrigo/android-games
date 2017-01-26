@@ -13,7 +13,7 @@ public class Camera2D {
     private final GLGraphics graphics;
 
     public Camera2D(GLGraphics graphics, float frustumWidth, float frustumHeight) {
-        position = new Vector2();
+        position = new Vector2(frustumWidth / 2, frustumHeight / 2);
         zoom = 1f;
         this.graphics = graphics;
         this.frustumWidth = frustumWidth;
