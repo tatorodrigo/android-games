@@ -18,6 +18,7 @@ import br.com.tattobr.samples.framework.gl.Texture;
 import br.com.tattobr.samples.framework.gl.Vertices;
 import br.com.tattobr.samples.framework.math.OverlapTester;
 import br.com.tattobr.samples.framework.math.Vector2;
+import br.com.tattobr.samples.framework.utils.FPSUtil;
 
 public class CannonCollisionTextureAtlasScreen extends Screen {
     private final int NUM_TARGETS = 20;
@@ -38,6 +39,7 @@ public class CannonCollisionTextureAtlasScreen extends Screen {
     private Vector2 gravity;
 
     private Texture texture;
+    private FPSUtil fpsUtil;
 
     public CannonCollisionTextureAtlasScreen(Game game) {
         super(game);
@@ -82,6 +84,8 @@ public class CannonCollisionTextureAtlasScreen extends Screen {
 
         touchPosition = new Vector2();
         gravity = new Vector2(0, -10);
+
+        fpsUtil = new FPSUtil();
     }
 
     private void generateTargets() {
@@ -186,6 +190,8 @@ public class CannonCollisionTextureAtlasScreen extends Screen {
         cannonVertices.bind();
         cannonVertices.draw(GL10.GL_TRIANGLES, 0, 6);
         cannonVertices.unbind();
+
+        fpsUtil.logFPS();
     }
 
     @Override
@@ -195,6 +201,7 @@ public class CannonCollisionTextureAtlasScreen extends Screen {
 
     @Override
     public void resume() {
+        fpsUtil.logFPS();
         texture = new Texture((GLGame) game, "atlas.png");
         texture.setFilters(GL10.GL_LINEAR, GL10.GL_LINEAR);
     }
