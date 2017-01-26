@@ -21,6 +21,7 @@
         <activity android:name=".activities.CannonCollisionTextureAtlasGame" />
         <activity android:name=".activities.CannonCollisionTextureAtlasBatchGame" />
         <activity android:name=".activities.AnimationGame" />
+        <activity android:name=".activities.TouchAnimationGame" />
     </application>
 
 </manifest>

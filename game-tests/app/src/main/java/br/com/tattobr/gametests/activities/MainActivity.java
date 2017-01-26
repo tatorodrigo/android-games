@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         mData.add(new GameTestData("Cannon Collision Texture Atlas", CannonCollisionTextureAtlasGame.class));
         mData.add(new GameTestData("Cannon Collision Texture Atlas Batch", CannonCollisionTextureAtlasBatchGame.class));
         mData.add(new GameTestData("Animation", AnimationGame.class));
+        mData.add(new GameTestData("Touch Animation", TouchAnimationGame.class));
     }
 
     private void initRecyclerView() {

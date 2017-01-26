@@ -24,5 +24,7 @@ public class WalkingBoy extends DynamicGameObject {
         } else if (position.x > worldWidth) {
             position.x = 0;
         }
+
+        bounds.lowerLeft.set(position.x - bounds.width * .5f, position.y - bounds.height * .5f);
     }
 }
