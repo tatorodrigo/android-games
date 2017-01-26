@@ -3,6 +3,7 @@ package br.com.tattobr.samples.framework.gl;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
+import java.nio.IntBuffer;
 import java.nio.ShortBuffer;
 
 import javax.microedition.khronos.opengles.GL10;
@@ -14,19 +15,21 @@ public class Vertices {
     private final boolean hasColor;
     private final boolean hasTexCoords;
     private final int vertexSize;
-    private final FloatBuffer vertices;
+    private final IntBuffer vertices;
     private final ShortBuffer indexes;
+    private final int []tmpBuffer;
 
     public Vertices(GLGraphics glGraphics, int maxVertices, int maxIndexes, boolean hasColor, boolean hasTexCoords) {
         this.glGraphics = glGraphics;
         this.hasColor = hasColor;
         this.hasTexCoords = hasTexCoords;
         this.vertexSize = (2 + (hasColor ? 4 : 0) + (hasTexCoords ? 2 : 0)) * Float.SIZE / 8;
+        tmpBuffer = new int[maxVertices * vertexSize / 4];
 
         ByteBuffer byteBuffer = ByteBuffer.allocateDirect(maxVertices * vertexSize);
         byteBuffer.order(ByteOrder.nativeOrder());
 
-        vertices = byteBuffer.asFloatBuffer();
+        vertices = byteBuffer.asIntBuffer();
 
         if (maxIndexes > 0) {
             byteBuffer = ByteBuffer.allocateDirect(maxIndexes * Short.SIZE / 8);
@@ -39,7 +42,11 @@ public class Vertices {
 
     public void setVertices(float[] vertices, int offset, int length) {
         this.vertices.clear();
-        this.vertices.put(vertices, offset, length);
+        int size = offset + length;
+        for(int i = 0; i < size; i++) {
+            tmpBuffer[i] = Float.floatToRawIntBits(vertices[i]);
+        }
+        this.vertices.put(tmpBuffer, offset, length);
         this.vertices.flip();
     }
 
