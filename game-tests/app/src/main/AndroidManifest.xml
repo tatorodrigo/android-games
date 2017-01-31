@@ -22,6 +22,7 @@
         <activity android:name=".activities.CannonCollisionTextureAtlasBatchGame" />
         <activity android:name=".activities.AnimationGame" />
         <activity android:name=".activities.TouchAnimationGame" />
+        <activity android:name=".activities.FontsGame" />
     </application>
 
 </manifest>
