@@ -38,7 +38,12 @@ public class AndroidAudio implements Audio {
 
     @Override
     public Music newMusic(String fileName) {
-        return null;
+        try {
+            AssetFileDescriptor assetFileDescriptor = assets.openFd(fileName);
+            return new AndroidMusic(assetFileDescriptor);
+        } catch (IOException e) {
+            throw new RuntimeException("Could not load music '" + fileName + "'");
+        }
     }
 
     @Override
