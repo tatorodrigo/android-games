@@ -109,6 +109,11 @@ public class AssetsUtil {
 
         font = new BMFont(game, "8bit.fnt", items, 512, 0);
 
+        jumpSound = game.getAudio().newSound("jump.wav");
+        highJumpSound = game.getAudio().newSound("highJump.wav");
+        hitSound = game.getAudio().newSound("hit.wav");
+        coinSound = game.getAudio().newSound("coin.wav");
+        clickSound = game.getAudio().newSound("click.wav");
         playMusic();
     }
 
