@@ -45,7 +45,7 @@ public class AssetsUtil {
 
     public static void load(GLGame game) {
         background = new Texture(game, "background.png");
-        backgroundRegion = new TextureRegion(background, 0, 0, background.getWidth(), background.getHeight());
+        backgroundRegion = new TextureRegion(background, 0, 0, DimensionUtil.GAME_WIDTH, DimensionUtil.GAME_HEIGHT);
 
         items = new Texture(game, "items.png");
         mainMenu = new TextureRegion(items,
