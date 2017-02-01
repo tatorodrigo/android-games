@@ -20,6 +20,7 @@ public class Platform extends DynamicGameObject {
     public int type;
     public int state;
     public float stateTime;
+    public boolean hasSpringAbove;
 
     public Platform(int type, float x, float y) {
         super(x, y, WIDTH, HEIGHT);

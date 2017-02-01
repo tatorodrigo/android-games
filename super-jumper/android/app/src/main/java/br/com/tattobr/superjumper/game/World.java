@@ -79,6 +79,7 @@ public class World {
 
             if (random.nextFloat() > .9f && type == Platform.TYPE_STATIC) {
                 spring = new Spring(x, y + Platform.HEIGHT * .5f + Spring.HEIGHT * .5f);
+                platform.hasSpringAbove = true;
                 springs.add(spring);
             }
 
@@ -164,7 +165,7 @@ public class World {
                         OverlapTester.overlapRectangles(bob.bounds, platform.bounds)) {
                     bob.hitPlatform();
                     listener.jump();
-                    if (random.nextFloat() > .5f) {
+                    if (!platform.hasSpringAbove && random.nextFloat() > .5f) {
                         platform.pulverize();
                     }
                     break;
