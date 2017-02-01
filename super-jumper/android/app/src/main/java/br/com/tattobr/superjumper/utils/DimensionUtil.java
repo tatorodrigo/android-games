@@ -1,7 +1,5 @@
 package br.com.tattobr.superjumper.utils;
 
-import br.com.tattobr.samples.framework.gl.TextureRegion;
-
 public class DimensionUtil {
     public static float GAME_WIDTH = 640f;
     public static float GAME_HEIGHT = 960f;

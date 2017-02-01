@@ -3,6 +3,8 @@ package br.com.tattobr.superjumper.game;
 import br.com.tattobr.samples.framework.game2d.DynamicGameObject;
 
 public class Platform extends DynamicGameObject {
+    public static final float VIEW_WIDTH = 2f;
+    public static final float VIEW_HEIGHT = .5f;
     public static final float WIDTH = 2f;
     public static final float HEIGHT = .5f;
     private static final float MID_WIDTH = WIDTH * .5f;

@@ -56,7 +56,7 @@ public class WorldRenderer {
         Castle castle = world.castle;
         spriteBatcher.drawSprite(
                 castle.position.x, castle.position.y,
-                Castle.WIDTH, Castle.HEIGHT,
+                Castle.VIEW_WIDTH, Castle.VIEW_HEIGHT,
                 AssetsUtil.castle
         );
     }
@@ -67,13 +67,13 @@ public class WorldRenderer {
             if (platform.state == Platform.STATE_NORMAL) {
                 spriteBatcher.drawSprite(
                         platform.position.x, platform.position.y,
-                        Platform.WIDTH, Platform.HEIGHT,
+                        Platform.VIEW_WIDTH, Platform.VIEW_HEIGHT,
                         AssetsUtil.platform
                 );
             } else {
                 spriteBatcher.drawSprite(
                         platform.position.x, platform.position.y,
-                        Platform.WIDTH, Platform.HEIGHT,
+                        Platform.VIEW_WIDTH, Platform.VIEW_HEIGHT,
                         AssetsUtil.breakingPlatform.getKeyFrame(
                                 platform.stateTime,
                                 Animation.ANIMATION_NONLOOPING
@@ -88,7 +88,7 @@ public class WorldRenderer {
         for (Spring spring : springs) {
             spriteBatcher.drawSprite(
                     spring.position.x, spring.position.y,
-                    Spring.WIDTH, Spring.HEIGHT,
+                    Spring.VIEW_WIDTH, Spring.VIEW_HEIGHT,
                     AssetsUtil.spring
             );
         }
@@ -99,7 +99,7 @@ public class WorldRenderer {
         for (Squirrel squirrel : squirrels) {
             spriteBatcher.drawSprite(
                     squirrel.position.x, squirrel.position.y,
-                    squirrel.velocity.x > 0 ? Squirrel.WIDTH : -Squirrel.WIDTH, Squirrel.HEIGHT,
+                    squirrel.velocity.x > 0 ? Squirrel.VIEW_WIDTH : -Squirrel.VIEW_WIDTH, Squirrel.VIEW_HEIGHT,
                     AssetsUtil.squirrel.getKeyFrame(
                             squirrel.stateTime,
                             Animation.ANIMATION_LOOPING
@@ -113,7 +113,7 @@ public class WorldRenderer {
         for (Coin coin : coins) {
             spriteBatcher.drawSprite(
                     coin.position.x, coin.position.y,
-                    Coin.WIDTH, Coin.HEIGHT,
+                    Coin.VIEW_WIDTH, Coin.VIEW_HEIGHT,
                     AssetsUtil.coin.getKeyFrame(
                             coin.stateTime,
                             Animation.ANIMATION_LOOPING
@@ -127,7 +127,7 @@ public class WorldRenderer {
         if (bob.state == Bob.STATE_JUMP) {
             spriteBatcher.drawSprite(
                     bob.position.x, bob.position.y,
-                    bob.velocity.x > 0 ? Bob.WIDTH : -Bob.WIDTH, Bob.HEIGHT,
+                    bob.velocity.x > 0 ? Bob.VIEW_WIDTH : -Bob.VIEW_WIDTH, Bob.VIEW_HEIGHT,
                     AssetsUtil.bobJump.getKeyFrame(
                             bob.stateTime,
                             Animation.ANIMATION_NONLOOPING
@@ -136,7 +136,7 @@ public class WorldRenderer {
         } else if (bob.state == Bob.STATE_FALL) {
             spriteBatcher.drawSprite(
                     bob.position.x, bob.position.y,
-                    bob.velocity.x > 0 ? Bob.WIDTH : -Bob.WIDTH, Bob.HEIGHT,
+                    bob.velocity.x > 0 ? Bob.VIEW_WIDTH : -Bob.VIEW_WIDTH, Bob.VIEW_HEIGHT,
                     AssetsUtil.bobFall.getKeyFrame(
                             bob.stateTime,
                             Animation.ANIMATION_NONLOOPING
@@ -145,7 +145,7 @@ public class WorldRenderer {
         } else {
             spriteBatcher.drawSprite(
                     bob.position.x, bob.position.y,
-                    bob.velocity.x > 0 ? Bob.WIDTH : -Bob.WIDTH, Bob.HEIGHT,
+                    bob.velocity.x > 0 ? Bob.VIEW_WIDTH : -Bob.VIEW_WIDTH, Bob.VIEW_HEIGHT,
                     AssetsUtil.bobHit
             );
         }
