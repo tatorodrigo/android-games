@@ -114,6 +114,7 @@ public class AssetsUtil {
         hitSound = game.getAudio().newSound("hit.wav");
         coinSound = game.getAudio().newSound("coin.wav");
         clickSound = game.getAudio().newSound("click.wav");
+        music = game.getAudio().newMusic("music.mp3");
         playMusic();
     }
 
