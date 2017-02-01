@@ -75,7 +75,7 @@ public class MainScreen extends GLScreen {
 
                 if (OverlapTester.pointInRectangle(playBounds, touchPosition)) {
                     AssetsUtil.playSound(AssetsUtil.clickSound);
-                    //game.setScreen();
+                    game.setScreen(new GameScreen(game));
                     return;
                 } else if (OverlapTester.pointInRectangle(highScoresBounds, touchPosition)) {
                     AssetsUtil.playSound(AssetsUtil.clickSound);

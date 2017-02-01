@@ -11,6 +11,11 @@ public class DimensionUtil {
     public static float MAIN_MENU_ITEM_WIDTH = 600f;
     public static float MAIN_MENU_ITEM_HEIGHT = 66.6667f;
 
+    public static float RESUME_QUIT_MENU_WIDTH = 384f;
+    public static float RESUME_QUIT_MENU_HEIGHT = 192f;
+    public static float RESUME_QUIT_MENU_ITEM_WIDTH = 384f;
+    public static float RESUME_QUIT_MENU_ITEM_HEIGHT = 96;
+
     public static float BUTTON_WIDTH = 128f;
     public static float BUTTON_HEIGHT = 128f;
 

@@ -29,7 +29,7 @@ public class AssetsUtil {
     public static TextureRegion platform;
     public static Animation coin;
     public static Animation squirrel;
-    public static Animation brakingPlatform;
+    public static Animation breakingPlatform;
     public static Animation bobJump;
     public static Animation bobFall;
     public static TextureRegion bobHit;
@@ -88,7 +88,7 @@ public class AssetsUtil {
                 new TextureRegion(items, 0, 320, DimensionUtil.SQUIRREL_WIDTH, DimensionUtil.SQUIRREL_HEIGHT),
                 new TextureRegion(items, 64, 320, DimensionUtil.SQUIRREL_WIDTH, DimensionUtil.SQUIRREL_HEIGHT)
         );
-        brakingPlatform = new Animation(
+        breakingPlatform = new Animation(
                 .2f,
                 new TextureRegion(items, 128, 320, 128, 32),
                 new TextureRegion(items, 128, 352, 128, 32),
