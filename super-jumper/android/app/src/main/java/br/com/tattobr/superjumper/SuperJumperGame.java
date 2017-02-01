@@ -33,5 +33,9 @@ public class SuperJumperGame extends AndroidGLGame {
     protected void onPause() {
         super.onPause();
         AssetsUtil.pauseMusic();
+        
+        if (isFinishing()) {
+            SettingsUtil.save(getFileIO());
+        }
     }
 }
