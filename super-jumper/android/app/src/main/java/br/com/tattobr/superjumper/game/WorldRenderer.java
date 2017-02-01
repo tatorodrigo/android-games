@@ -43,12 +43,22 @@ public class WorldRenderer {
 
     private void renderObjects() {
         spriteBatcher.beginBatch(AssetsUtil.items);
+        renderCastle();
         renderPlatforms();
         renderSprings();
         renderSquirrels();
         renderCoins();
         renderBob();
         spriteBatcher.endBatch();
+    }
+
+    private void renderCastle() {
+        Castle castle = world.castle;
+        spriteBatcher.drawSprite(
+                castle.position.x, castle.position.y,
+                Castle.WIDTH, Castle.HEIGHT,
+                AssetsUtil.castle
+        );
     }
 
     private void renderPlatforms() {
