@@ -6,4 +6,8 @@ public interface Font {
     void drawText(SpriteBatcher batcher, String text, float x, float y);
 
     void drawText(SpriteBatcher batcher, String text, float x, float y, float scaleX, float scaleY);
+
+    float getBiggestCharWidth();
+
+    float getBiggestCharHeight();
 }

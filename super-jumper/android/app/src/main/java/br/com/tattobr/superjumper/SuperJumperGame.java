@@ -28,4 +28,10 @@ public class SuperJumperGame extends AndroidGLGame {
             reloadAssets = true;
         }
     }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        AssetsUtil.pauseMusic();
+    }
 }

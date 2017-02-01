@@ -23,9 +23,13 @@ public class BMFont implements Font {
     private Texture texture;
     private float offsetX;
     private float offsetY;
+    private float biggestCharWidth;
+    private float biggestCharHeight;
 
     public BMFont(Game game, String configurationFileName, Texture texture, float offsetX, float offsetY) {
         try {
+            biggestCharWidth = -1;
+            biggestCharHeight = -1;
             chars = new ArrayList<>();
             this.texture = texture;
             this.offsetX = offsetX;
@@ -119,6 +123,8 @@ public class BMFont implements Font {
                 texture, offsetX + fontChar.x, offsetY + fontChar.y,
                 fontChar.width, fontChar.height
         );
+        biggestCharWidth = Math.max(fontChar.width, biggestCharWidth);
+        biggestCharHeight = Math.max(fontChar.height, biggestCharHeight);
         parser.nextTag();
         return fontChar;
     }
@@ -177,5 +183,15 @@ public class BMFont implements Font {
             );
             x += fontChar.width * scaleX;
         }
+    }
+
+    @Override
+    public float getBiggestCharWidth() {
+        return biggestCharWidth;
+    }
+
+    @Override
+    public float getBiggestCharHeight() {
+        return biggestCharHeight;
     }
 }
